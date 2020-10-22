@@ -1,42 +1,55 @@
 /*!
-    * Start Bootstrap - Resume v6.0.1 (https://startbootstrap.com/template-overviews/resume)
-    * Copyright 2013-2020 Start Bootstrap
-    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
-    */
-    (function ($) {
-    "use strict"; // Start of use strict
+ * Start Bootstrap - Resume v6.0.1 (https://startbootstrap.com/template-overviews/resume)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE)
+ */
+window.onload = function () {
+  scrolly();
+};
 
-    // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-        if (
-            location.pathname.replace(/^\//, "") ==
-                this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-        ) {
-            var target = $(this.hash);
-            target = target.length
-                ? target
-                : $("[name=" + this.hash.slice(1) + "]");
-            if (target.length) {
-                $("html, body").animate(
-                    {
-                        scrollTop: target.offset().top,
-                    },
-                    1000,
-                    "easeInOutExpo"
-                );
-                return false;
-            }
+const moveToHash = async (hash) => {
+  return new Promise((result) => {
+    var slice = hash.slice(1);
+    var target = $(hash);
+    target = target.length ? target : $("[name=" + slice + "]");
+    if (target.length) {
+      $("html, body").animate(
+        {
+          scrollTop: target.offset().top,
+        },
+        1000,
+        "easeInOutExpo",
+        function () {
+          result();
         }
-    });
+      );
+      return false;
+    }
+  });
+};
 
-    // Closes responsive menu when a scroll trigger link is clicked
-    $(".js-scroll-trigger").click(function () {
-        $(".navbar-collapse").collapse("hide");
-    });
+(function ($) {
+  "use strict"; // Start of use strict
 
-    // Activate scrollspy to add active class to navbar items on scroll
-    $("body").scrollspy({
-        target: "#sideNav",
-    });
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+    if (
+      location.pathname.replace(/^\//, "") ==
+        this.pathname.replace(/^\//, "") &&
+      location.hostname == this.hostname
+    ) {
+      $(".resume-section").removeClass("snap");
+      moveToHash(this.hash);
+    }
+  });
+
+  // Closes responsive menu when a scroll trigger link is clicked
+  $(".js-scroll-trigger").click(function () {
+    $(".navbar-collapse").collapse("hide");
+  });
+
+  // Activate scrollspy to add active class to navbar items on scroll
+  $("body").scrollspy({
+    target: "#sideNav",
+  });
 })(jQuery); // End of use strict
