@@ -1,8 +1,13 @@
-/* ANIATION */
-/* body {
-  scroll-snap-type: y mandatory;
+.tales {
+  width: 100%;
 }
 
-.resume-section {
-  scroll-snap-align: start;
-} */
+.carousel-inner {
+  max-width: 20vw;
+  min-width: 240px;
+}
+
+.carousel-item {
+  max-width: 20vw;
+  min-width: 240px;
+}

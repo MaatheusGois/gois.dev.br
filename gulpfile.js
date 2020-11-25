@@ -36,9 +36,9 @@ gulp.task("useref", async function () {
 
 gulp.task("images", function () {
   return gulp
-    .src("assets/img/*.+(png|jpg|gif|svg)")
+    .src("images/*.+(png|jpg|gif|svg)")
     .pipe(imagemin())
-    .pipe(gulp.dest("dist/assets/img"));
+    .pipe(gulp.dest("dist/images"));
 });
 
 gulp.task("build", gulp.series("clean:dist", "useref", "minihtml"));
