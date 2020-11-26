@@ -10,4 +10,6 @@
 .carousel-item {
   max-width: 20vw;
   min-width: 240px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
