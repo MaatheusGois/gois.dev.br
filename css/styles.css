@@ -11048,6 +11048,7 @@ a {
 }
 
 @media (min-width: 992px) {
+
   #sideNav {
     text-align: center;
     position: fixed;

@@ -3,13 +3,19 @@
 }
 
 .carousel-inner {
-  max-width: 20vw;
+  max-width: 24vw;
   min-width: 240px;
 }
 
 .carousel-item {
-  max-width: 20vw;
+  max-width: 24vw;
   min-width: 240px;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+@media (min-width: 770px) {
+  .project-on {
+    text-align: right;
+  }
 }
