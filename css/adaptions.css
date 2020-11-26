@@ -14,9 +14,17 @@
   padding-right: 10px;
 }
 
+.figma-frame-phone {
+  min-width: 300px
+}
+
 @media (min-width: 770px) {
   .project-on {
     text-align: right;
+  }
+
+  .figma-frame-phone {
+    min-width: 400px
   }
 }
 
