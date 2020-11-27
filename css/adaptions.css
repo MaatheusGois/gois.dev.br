@@ -32,3 +32,8 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
+
+.img-icons {
+  max-width: 40px;
+  max-height: 40px;
+}
