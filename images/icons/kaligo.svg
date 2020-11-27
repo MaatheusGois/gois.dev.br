@@ -1,11 +1,11 @@
-<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="400" height="400" rx="100" fill="#E0F2FF"/>
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="40" height="40" rx="10" fill="#E0F2FF"/>
 <g filter="url(#filter0_i)">
-<path d="M193.41 200.185C193.41 234.62 170.527 260.835 144.205 260.835C117.883 260.835 95 234.62 95 200.185C95 165.75 117.883 139.534 144.205 139.534C170.527 139.534 193.41 165.75 193.41 200.185Z" stroke="#25334D" stroke-width="10" stroke-linecap="square" stroke-linejoin="round"/>
-<path d="M100.014 87.9593H196.662V198.277M97.948 276.167C97.948 276.167 103.512 315.907 148.02 314C192.529 312.092 196.662 276.167 196.662 276.167V198.277M196.662 198.277L228.295 164.419M301.257 86.2108L228.295 164.419M228.295 164.419L310 263.928" stroke="#25334D" stroke-width="10" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M19.591 20.0185C19.591 23.5532 17.2334 26.3335 14.4205 26.3335C11.6076 26.3335 9.25 23.5532 9.25 20.0185C9.25 16.4839 11.6076 13.7035 14.4205 13.7035C17.2334 13.7035 19.591 16.4839 19.591 20.0185Z" stroke="#25334D" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M10.0014 8.79593H19.6662V19.8277M9.7948 27.6167C9.7948 27.6167 10.3512 31.5907 14.802 31.4C19.2529 31.2092 19.6662 27.6167 19.6662 27.6167V19.8277M19.6662 19.8277L22.8295 16.4419M30.1257 8.62108L22.8295 16.4419M22.8295 16.4419L31 26.3928" stroke="#25334D" stroke-width="0.5" stroke-linecap="square" stroke-linejoin="round"/>
 </g>
 <defs>
-<filter id="filter0_i" x="90" y="79.1439" width="231.037" height="243.922" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_i" x="9" y="8.26773" width="26.3519" height="27.3889" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
