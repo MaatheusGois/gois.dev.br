@@ -55,7 +55,7 @@ function showModal() {
     const modal = document.getElementsByClassName('main-modal')[0];
     modal.classList.toggle("main-modal--show");
     const sendButton = document.getElementById("sendButton");
-    sendButton.addEventListener("click", sendLetter, false);
+    sendButton.addEventListener("click", sendMessage, false);
     const emailBlock = modal.querySelector('.main-modal__block[data-name=email]');
     modal.querySelector("form").oninput = () => {
         const isAgreed = modal.querySelector('input[name="isAgreed"]').checked;
@@ -75,24 +75,12 @@ function closeModal() {
     modal.classList.remove("main-modal--show");
 }
 
-function sendLetter(e) {
+function sendMessage(e) {
     e.preventDefault();
     const formData = new FormData(document.getElementById('sendForm'));
-    const {isAgreed, ...formDataObject} = Object.fromEntries(formData);
-    if (formDataObject.email === '' || !isAgreed) {
-        if (formDataObject.email === '') document.querySelector('.main-modal__block').classList.add("main-modal__block--error");
-        if (!isAgreed) document.querySelector('.main-modal__checkbox').classList.add("main-modal__checkbox--error");
-        return;
-    } else {
-        if (formDataObject.email !== '') document.querySelector('.main-modal__block').classList.remove("main-modal__block--error");
-        if (isAgreed) document.querySelector('.main-modal__checkbox').classList.remove("main-modal__checkbox--error");
-    }
-    const data = JSON.stringify(formDataObject);
-    const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST", "/contact");
-    xmlhttp.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    xmlhttp.send(data);
+    const {otherDetails} = Object.fromEntries(formData);
+    const waMe = "https://api.whatsapp.com/send?phone=5511984694282&text=" + encodeURIComponent(otherDetails);
+    window.open(waMe, '_blank');
     document.querySelector(".main-modal").classList.add("main-modal--sent");
-
     dataLayer.push({'event':'contact_request_sent'});
 }

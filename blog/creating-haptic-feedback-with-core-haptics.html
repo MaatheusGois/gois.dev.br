@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from exyte.com/blog/creating-haptic-feedback-with-core-haptics by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 May 2024 03:16:07 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
     
 
@@ -22,10 +20,10 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="/img/browserconfig.xml">
     <meta name="theme-color" content="#0C0C0C">
-    <meta property="og:url" content="https://exyte.com/blog/creating-haptic-feedback-with-core-haptics" />
+    <meta property="og:url" content="https://gois.dev.br/blog/creating-haptic-feedback-with-core-haptics" />
     <meta property="og:title" content="Creating haptic feedback in iOS 13 with Core Haptics" />
     <meta property="og:description" content="With iOS 13 release Apple finally added a new framework called Core Haptics, which allows developers to define and play custom haptic feedback patterns." />
-    <meta property="og:image" content="https://exyte.com&#x2F;upload&#x2F;730_600_cover-blog-detail_haptic-feedback.png" />
+    <meta property="og:image" content="https://gois.dev.br&#x2F;upload&#x2F;730_600_cover-blog-detail_haptic-feedback.png" />
     <link rel="canonical" href="creating-haptic-feedback-with-core-haptics.html">
     <link rel="alternate" hreflang="x-default" href="creating-haptic-feedback-with-core-haptics.html">
 </head>
@@ -286,7 +284,8 @@ If you prefer to use the <a class="link link--line link--underscored" rel="nofol
       <img class="arrow" src="../img/arrow-right.svg" alt="arrow"/>
     </div>
   </a>
-</footer><div class="main-modal">
+</footer>
+<div class="main-modal">
     <button class="main-modal__header">
         <img class="main-modal__header-img" src="../img/send-a-letter.svg"
              alt="Send a message" onclick="showModal()">
@@ -295,38 +294,20 @@ If you prefer to use the <a class="link link--line link--underscored" rel="nofol
     </button>
     <div class="main-modal__form-sent">
         <img class="main-modal__form-sent-img" src="../img/sent.png" alt="sent image" loading="lazy"/>
-        <div class="main-modal__form-sent-title">Thank you for<br> contacting us!</div>
+        <div class="main-modal__form-sent-title">Thank you for<br> contacting me!</div>
         <div class="main-modal__form-sent-text">Your request has been sent, please wait for a response.</div>
         <button class="main-modal__button" type="button" onclick="closeModal()">GREAT</button>
     </div>
     <form class="main-modal__form" id="sendForm">
         <div class="main-modal__title">Send a message</div>
-        <label class="main-modal__block" data-name="email">
-            <div class="main-modal__label">E-mail</div>
-            <input class="main-modal__input" type="email" name="email"/>
-            <div class="main-modal__error">*This is a required field</div>
-        </label>
         <label class="main-modal__block">
-            <div class="main-modal__label">Budget</div>
-            <input class="main-modal__input" name="budget"/>
+            <div class="main-modal__label">Write your message</div>
+            <textarea class="main-modal__textarea" name="otherDetails" ></textarea>
         </label>
-        <label class="main-modal__block">
-            <div class="main-modal__label">Required expertise</div>
-            <input class="main-modal__input" name="requiredExpertise"/>
-        </label>
-        <label class="main-modal__block">
-            <div class="main-modal__label">Other details and questions</div>
-            <textarea class="main-modal__textarea" name="otherDetails"></textarea>
-        </label>
-        <label class="main-modal__checkbox">
-            <input type="checkbox" name="isAgreed">
-            <span class="check__box"></span>
-            <span>I agree to Exyte’s Terms of use and user's agreements</span>
-        </label>
-        <button class="main-modal__button main-modal__button--disabled" type="button" id="sendButton">submit</button>
+        <button class="main-modal__button main-modal__button--disabled" type="button" id="sendButton">Send</button>
     </form>
-</div><script src="../js/common.js"></script>
+</div>
+<script src="../js/common.js"></script>
 </body>
 
-<!-- Mirrored from exyte.com/blog/creating-haptic-feedback-with-core-haptics by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 22 May 2024 03:16:09 GMT -->
 </html>
