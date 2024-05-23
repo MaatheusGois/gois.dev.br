@@ -141,7 +141,7 @@
 <p class="article__text article__text-style">There are many models designed to standardize and simplify layouts. For web development, CSS Working Group proposed Grid Layout in 2017 as the best way to create 2D UI templates.</p>
 <img src="../upload/Artboard-1-100.jpg" alt="" />
 <p class="article__text article__text-style">Swift has been late on adding something similar to Grid Layout. In iOS 13 SDK, Apple added the possibility to arrange elements linearly through VStack, HStack, and ZStack in the form of a list. But creating 2D interfaces in such a way is unwieldy since it is inconvenient to arrange the elements in a two-dimensional coordinate system.</p>
-<p class="article__text article__text-style">Recently, both Exyte and Apple worked on and released our own grid implementations, but our final results are quite different. In this article, we will look at what Grid Layout is, what features it has, and how our grid implementation differs from Apple’s. </p>
+<p class="article__text article__text-style">Recently, both Gois and Apple worked on and released our own grid implementations, but our final results are quite different. In this article, we will look at what Grid Layout is, what features it has, and how our grid implementation differs from Apple’s. </p>
 <h2 class="article__title--h2">What is Grid Layout?</h2>
 <p class="article__text article__text-style">Here’s an example of a simple grid:</p>
 <img src="../upload/Screenshot-2020-07-02-at-14.25.44.png" alt="" />
@@ -179,29 +179,29 @@
 <li class="article__item">And, of course, we should be able to add animations for all the changes that happen. </li>
 </ul>
 <h2 class="article__title--h2">Our grid implementation</h2>
-<p class="article__text article__text-style">We have implemented all the requirements above in <a class="link link--line link--underscored" rel="nofollow" href="https://github.com/maatheusgois/Grid">ExyteGrid</a> — our own grid implementation that is written entirely in SwiftUI.</p>
-<p class="article__text article__text-style">Here are a few examples where ExyteGrid could be used to implement application UIs: </p>
+<p class="article__text article__text-style">We have implemented all the requirements above in <a class="link link--line link--underscored" rel="nofollow" href="https://github.com/maatheusgois/Grid">GoisGrid</a> — our own grid implementation that is written entirely in SwiftUI.</p>
+<p class="article__text article__text-style">Here are a few examples where GoisGrid could be used to implement application UIs: </p>
 <h3 class="article__title--h3">Strava</h3>
 <p class="article__text article__text-style">The interface of this application’s screen is nothing more than a grid (which we have represented by colored rectangles). We’ve also implemented an alternative landscape view by changing the number of columns, starting positions, and spans of some of the elements. </p>
 <img src="../upload/tracker_blur_device.gif" alt="" />
 <h3 class="article__title--h3">iOS calculator</h3>
-<p class="article__text article__text-style">Do you remember the built-in iOS calculator? As you might have guessed, it also is a grid, with each button representing one grid item. Using ExyteGrid, we not only replicated the layout, but also easily implemented an alternative view in a similar way. Thanks to the power of SwiftUI, we can animate grid state changes.</p>
+<p class="article__text article__text-style">Do you remember the built-in iOS calculator? As you might have guessed, it also is a grid, with each button representing one grid item. Using GoisGrid, we not only replicated the layout, but also easily implemented an alternative view in a similar way. Thanks to the power of SwiftUI, we can animate grid state changes.</p>
 <img src="../upload/calc-animation-mock-iPhone-XS-Max-1.gif" alt="" />
-<h3 class="article__title--h3">Differences between ExyteGrid and Apple’s Lazy Grid</h3>
-<p class="article__text article__text-style">If we talk about the recently announced Apple LazyVGrid and LazyHGrid, there are several differences between them and ExyteGrid: </p>
+<h3 class="article__title--h3">Differences between GoisGrid and Apple’s Lazy Grid</h3>
+<p class="article__text article__text-style">If we talk about the recently announced Apple LazyVGrid and LazyHGrid, there are several differences between them and GoisGrid: </p>
 <ul class="article__list">
 <li class="article__item">Apple’s implementation lacks the ability to specify the cell span. This means that cells can’t be combined vertically and/or horizontally with multiple adjacent cells. </li>
 <li class="article__item">It is also impossible to specify a priority position for elements: a fixed column or a row you would like the item to reside in.</li>
-<li class="article__item">Existence of these two possibilities in ExyteGrid enables us to provide two modes of packing elements: sparse (the usual one) and dense (the order of elements can be changed to minimize the number of empty spaces).</li>
-<li class="article__item">Changes in the Apple Grid’s state most often result in the usual fade animation if the elements are not in a single ForEach. ExyteGrid does animation by associating the item’s ID with its position within the grid. In this case, individual elements can be assigned a specific ID using a GridGroup or ForEach, which allows SwiftUI to assign a transition animation to each element.</li>
-<li class="article__item">Flex tracks are sized differently. Flexible size in Apple Grid requires an explicit specification of max size in points, while .fr (fractional units) in ExyteGrid can specify the track sizes as ratios. </li>
-<li class="article__item">There is a big difference between Apple Grid's .adaptive sizing and .fit sizing of our implementation. Adaptive sizing does not really specify a specific number of tracks. It creates as many of them as it can in accordance with the restrictions. Fit sizing for ExyteGrid creates one track, the size of which is equal to the size of the maximum element that falls into it.</li>
-<li class="article__item">In ExyteGrid, you can specify a gridCellOverlay and a gridCellBackground, which makes it possible to place a custom view in free space around items when it appears. (This happens when there is a difference in the size of items in the same row or column.)</li>
-<li class="article__item">Apple Grid loads items lazily, while ExyteGrid initializes them all at once.</li>
-<li class="article__item">ExyteGrid has content mode: .fill where the grid arranges items to fill the container view, without having to manually calculate the size of each item.</li>
+<li class="article__item">Existence of these two possibilities in GoisGrid enables us to provide two modes of packing elements: sparse (the usual one) and dense (the order of elements can be changed to minimize the number of empty spaces).</li>
+<li class="article__item">Changes in the Apple Grid’s state most often result in the usual fade animation if the elements are not in a single ForEach. GoisGrid does animation by associating the item’s ID with its position within the grid. In this case, individual elements can be assigned a specific ID using a GridGroup or ForEach, which allows SwiftUI to assign a transition animation to each element.</li>
+<li class="article__item">Flex tracks are sized differently. Flexible size in Apple Grid requires an explicit specification of max size in points, while .fr (fractional units) in GoisGrid can specify the track sizes as ratios. </li>
+<li class="article__item">There is a big difference between Apple Grid's .adaptive sizing and .fit sizing of our implementation. Adaptive sizing does not really specify a specific number of tracks. It creates as many of them as it can in accordance with the restrictions. Fit sizing for GoisGrid creates one track, the size of which is equal to the size of the maximum element that falls into it.</li>
+<li class="article__item">In GoisGrid, you can specify a gridCellOverlay and a gridCellBackground, which makes it possible to place a custom view in free space around items when it appears. (This happens when there is a difference in the size of items in the same row or column.)</li>
+<li class="article__item">Apple Grid loads items lazily, while GoisGrid initializes them all at once.</li>
+<li class="article__item">GoisGrid has content mode: .fill where the grid arranges items to fill the container view, without having to manually calculate the size of each item.</li>
 </ul>
-<p class="article__text article__text-style">These two implementations are conceptually similar, but in many respects quite different. On the one hand, Apple Grid has a native implementation focused on a large number of elements, and on the other hand, ExyteGrid possesses more functionality and open source code, so anyone can participate in its improvement. </p>
-<p class="article__text article__text-style">If you choose to use <a class="link link--line link--underscored" rel="nofollow" href="https://github.com/maatheusgois/Grid">ExyteGrid</a>, we would be glad to see you both as users and collaborators. Of course, there are still many features that have yet to be done. More on that in <a class="link link--line link--underscored" href="https://github.com/maatheusgois/Grid/blob/master/README.md#roadmap">our roadmap</a>.</p>
+<p class="article__text article__text-style">These two implementations are conceptually similar, but in many respects quite different. On the one hand, Apple Grid has a native implementation focused on a large number of elements, and on the other hand, GoisGrid possesses more functionality and open source code, so anyone can participate in its improvement. </p>
+<p class="article__text article__text-style">If you choose to use <a class="link link--line link--underscored" rel="nofollow" href="https://github.com/maatheusgois/Grid">GoisGrid</a>, we would be glad to see you both as users and collaborators. Of course, there are still many features that have yet to be done. More on that in <a class="link link--line link--underscored" href="https://github.com/maatheusgois/Grid/blob/master/README.md#roadmap">our roadmap</a>.</p>
         </div>
         <ul class="post__share post__share--bottom">
             <li>
@@ -281,12 +281,11 @@
         </div>
 </div>
 <footer class="footer">
-  <div class="footer__copyright">© Exyte 2024</div>
+  <div class="footer__copyright">© Gois 2024</div>
   <div class="footer__links">
     <a class="footer__link" href="http://linkedin.com/in/maatheusgois" target="_blank">linkedin</a>
     <a class="footer__link" href="https://github.com/maatheusgois" target="_blank">github</a>
-    <a class="footer__link" href="https://clutch.co/profile/exyte#summary" target="_blank">clutch</a>
-    <a class="footer__link" href="mailto:hello@exyte.com" target="_blank">email</a>
+    <a class="footer__link" href="mailto:matheusgoislimasilva@gmail.com" target="_blank">email</a>
   </div>
   <a class="footer__back" href="#first"><span class="footer__back-word">back to </span>top
     <div class="footer__back-arrow">

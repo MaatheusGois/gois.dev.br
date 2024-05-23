@@ -122,7 +122,7 @@
 .development__step {
   display: flex;
   justify-content: space-between;
-  height: 254px;
+  height: 300px;
 }
 
 .development__step svg path {
@@ -133,6 +133,7 @@
   user-select: none;
   width: 345px;
   height: 214px;
+  margin-top: 86px;
 }
 
 .development__step-number-img {
