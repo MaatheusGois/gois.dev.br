@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Contacts | Gois</title>
+  <meta name="description"
+    content="Drop us a line with a brief description of your project. We will get back to you in a matter of one business day. Talk to you soon!">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="user-scalable=1.0,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/contacts.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/img/browserconfig.xml">
+  <meta name="theme-color" content="#0C0C0C">
+  <meta property="og:url" content="https://gois.dev.br/contacts" />
+  <meta property="og:title" content="Contacts | Gois" />
+  <meta property="og:description"
+    content="Drop us a line with a brief description of your project. We will get back to you in a matter of one business day. Talk to you soon!" />
+  <meta property="og:image" content="https://gois.dev.br/img/exyte-logo.jpg" />
+  <link rel="canonical" href="contacts.html">
+  <link rel="alternate" hreflang="x-default" href="contacts.html">
+</head>
+
+<body>
+  <header id="site-header">
+    <div class="header__logo">
+      <a class="header__logo-link" href="index.html">
+        <img src="img/logo-beige.svg" height="24" width="84" alt="logo" />
+      </a>
+    </div>
+    <div class="header__menu">
+      <a class="header__menu-link" href="index.html">01_Main</a>
+      <a class="header__menu-link" href="portfolio.html">02_Projects</a>
+      <!-- <a class="header__menu-link" href="blog.html">03_BLOG</a> -->
+      <a class="header__menu-link" href="contacts.html">03_CONTACT</a>
+      <div style="flex-grow: 1;"></div>
+      <div class="header__mobile-buttons">
+        <button class="header-footer__button header-footer__button--letter" onclick="showModal()">
+          <div class="header-footer__arrow ">
+            <img class="arrow" src="img/arrow-right-up.svg" alt="arrow" />
+          </div>
+          Send a message
+        </button>
+        <a class="header-footer__button header-footer__button--call" href="https://calendly.com/maatheusgois/30min"
+          target="_blank">
+          <div class="header-footer__arrow ">
+            <img class="arrow" src="img/arrow-right-up.svg" alt="arrow" />
+          </div>
+          Schedule a call
+        </a>
+      </div>
+    </div>
+    <div class="header__button-wrapper">
+      <button class="header__button header__button--mobile" onclick="showMobileMenu()">MENU</button>
+      <button class="header__button header__button--close" onclick="showMobileMenu()">CLOSE</button>
+      <button class="header__button header__button--desktop" onclick="showModal()">GET IN TOUCH</button>
+    </div>
+  </header>
+  <div class="contacts__container" id="first">
+    <div class="contacts__image"></div>
+    <div class="contacts__title"><span class="contacts__title-slash">//</span> Contact me</div>
+    <div class="contacts__description">I’m always excited to connect with fellow professionals, potential collaborators, and anyone interested in my work. Whether you have a project in mind, want to discuss new ideas, or simply wish to network, feel free to reach out.
+    </div>
+    <div class="contacts__branches">
+      <div class="contacts__branch">
+        <div class="contacts__branch-title">Mobile</div>
+        <a class="contacts__branch-address" href="https://api.whatsapp.com/send?phone=5511984694282" target="_blank">+ 55 11 98469-4282</a>
+      </div>
+      <div class="contacts__branch">
+        <div class="contacts__branch-title">Linkedin</div>
+        <a class="contacts__branch-address" href="https://www.linkedin.com/in/maatheusgois/" target="_blank">MaatheusGois</a>
+      </div>
+      <div class="contacts__branch">
+        <div class="contacts__branch-title">email</div>
+        <a class="contacts__branch-address"
+          href="mailto:matheusgoislimasilva@gmail.com">matheusgoislimasilva@gmail.com</a>
+      </div>
+    </div>
+    <div class="contacts__buttons">
+      <button class="contacts__button contacts__button--letter" onclick="showModal()">
+        <div class="contacts__arrow ">
+          <img class="arrow" src="img/arrow-right-up.svg" alt="arrow" />
+        </div>
+        Send a message
+      </button>
+      <a class="contacts__button contacts__button--call" href="https://calendly.com/maatheusgois/30min" target="_blank">
+        <div class="contacts__arrow ">
+          <img class="arrow" src="img/arrow-right-up.svg" alt="arrow" />
+        </div>
+        Schedule a call
+      </a>
+    </div>
+    <img src="img/contacts-illustration.svg" alt="contacts image" class="contacts__image">
+  </div>
+  <footer class="footer">
+    <div class="footer__copyright">© Gois 2024</div>
+    <div class="footer__links">
+      <a class="footer__link" href="http://linkedin.com/in/maatheusgois" target="_blank">linkedin</a>
+      <a class="footer__link" href="https://github.com/maatheusgois" target="_blank">github</a>
+      <a class="footer__link" href="mailto:matheusgoislimasilva@gmail.com" target="_blank">email</a>
+    </div>
+    <a class="footer__back" href="#first"><span class="footer__back-word">back to </span>top
+      <div class="footer__back-arrow">
+        <img class="arrow" src="img/arrow-right.svg" alt="arrow" />
+      </div>
+    </a>
+  </footer>
+  <div class="main-modal">
+    <button class="main-modal__header">
+      <img class="main-modal__header-img" src="img/send-a-letter.svg" alt="Send a message" onclick="showModal()">
+      <img class="main-modal__header-img--small" src="img/send-a-letter-small.svg" alt="Send a message"
+        onclick="showModal()">
+    </button>
+    <div class="main-modal__form-sent">
+      <img class="main-modal__form-sent-img" src="img/sent.png" alt="sent image" loading="lazy" />
+      <div class="main-modal__form-sent-title">Thank you for<br> contacting me!</div>
+      <div class="main-modal__form-sent-text">Your request has been sent, please wait for a response.</div>
+      <button class="main-modal__button" type="button" onclick="closeModal()">GREAT</button>
+    </div>
+    <form class="main-modal__form" id="sendForm">
+      <div class="main-modal__title">Send a message</div>
+      <label class="main-modal__block">
+        <div class="main-modal__label">Write your message</div>
+        <textarea class="main-modal__textarea" name="otherDetails"></textarea>
+      </label>
+      <button class="main-modal__button main-modal__button--disabled" type="button" id="sendButton">Send</button>
+    </form>
+  </div>
+  <script src="js/common.js"></script>
+</body>
+
+</html>
