@@ -2061,6 +2061,7 @@ header,
 
 .portfolio-page__case-img {
 	max-width: 100%;
+	object-fit: scale-down;
 }
 
 .portfolio-page__main-cases {
@@ -2083,6 +2084,7 @@ header,
 
 .portfolio-page__main-cases .portfolio-page__case-img {
 	margin: auto 0;
+	object-fit: scale-down;
 }
 
 .portfolio-page__main-cases .portfolio-page__case-wrap-text {
