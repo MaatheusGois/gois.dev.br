@@ -620,6 +620,24 @@
     </div>
     <script src="js/index.js"></script>
     <script src="js/common.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+        const firebaseConfig = {
+          apiKey: "AIzaSyCbT-BMlKKOxKd3wZvFsYIg96DJ5UGvB8M",
+          authDomain: "gois-dev.firebaseapp.com",
+          projectId: "gois-dev",
+          storageBucket: "gois-dev.appspot.com",
+          messagingSenderId: "801814980818",
+          appId: "1:801814980818:web:b06b7bd656ab72fbf5250b",
+          measurementId: "G-RD62W6FLTQ"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
 </body>
 
 </html>
