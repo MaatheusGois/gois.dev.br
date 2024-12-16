@@ -84,3 +84,58 @@ function sendMessage(e) {
     document.querySelector(".main-modal").classList.add("main-modal--sent");
     dataLayer.push({'event':'contact_request_sent'});
 }
+
+async function fetchRepoStars() {
+    const repos = [
+        { url: 'https://github.com/DebugSwift/DebugSwift', element: '.main-repos__item:nth-child(1) .main-repos__stars' },
+        { url: 'https://github.com/MaatheusGois/lan-scanner', element: '.main-repos__item:nth-child(2) .main-repos__stars' },
+        { url: 'https://github.com/MaatheusGois/clean-code-swift', element: '.main-repos__item:nth-child(3) .main-repos__stars' },
+        { url: 'https://github.com/MaatheusGois/DuoDemo', element: '.main-repos__item:nth-child(4) .main-repos__stars' },
+        { url: 'https://github.com/MaatheusGois/fox2', element: '.main-repos__item:nth-child(5) .main-repos__stars' },
+        { url: 'https://github.com/maatheusgois/lgtv-controller', element: '.main-repos__item:nth-child(6) .main-repos__stars' },
+    ];
+
+    for (const repo of repos) {
+        const [owner, repoName] = repo.url.split('github.com/')[1].split('/');
+        const apiUrl = `https://api.github.com/repos/${owner}/${repoName}`;
+
+        try {
+            const response = await fetch(apiUrl);
+            if (!response.ok) {
+                console.error(`Failed to fetch data for ${repoName}`);
+                continue;
+            }
+            const data = await response.json();
+            const starsElement = document.querySelector(repo.element);
+
+            if (starsElement) {
+                animateNumber(starsElement, data.stargazers_count);
+            }
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+}
+
+function animateNumber(element, endValue) {
+    const duration = 1000; // Duração da animação em milissegundos
+    const startValue = 0;
+    const startTime = performance.now();
+
+    function updateNumber(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1); // Limita o progresso a 1
+        const currentValue = Math.floor(progress * endValue);
+
+        element.textContent = currentValue;
+
+        if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+        }
+    }
+
+    requestAnimationFrame(updateNumber);
+}
+
+// Inicia a atualização ao carregar a página
+document.addEventListener('DOMContentLoaded', fetchRepoStars);

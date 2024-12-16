@@ -2065,3 +2065,7 @@
 }
 
 /*</editor-fold>*/
+
+.main-repos__stars {
+  transition: opacity 0.3s ease-in-out;
+}
