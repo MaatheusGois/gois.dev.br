@@ -113,9 +113,6 @@ Discover how I work, see what my colleagues say about my projects, and explore i
 ### // Contact me
 I’m always excited to connect with fellow _professionals_, potential _collaborators_, and anyone interested in my work using the preferred method of communication.
 
-[Send a message](https://api.whatsapp.com/send?phone=5511984694282&text=Hi%20Matheus%2C%20how%20are%20you%3F)
-
-
 [Schedule a call](https://calendly.com/maatheusgois/30min?month=2024-05)
 
 ---
