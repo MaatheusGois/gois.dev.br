@@ -79,7 +79,7 @@ function sendMessage(e) {
     e.preventDefault();
     const formData = new FormData(document.getElementById('sendForm'));
     const {otherDetails} = Object.fromEntries(formData);
-    const waMe = "https://api.whatsapp.com/send?phone=5511984694282&text=" + encodeURIComponent(otherDetails);
+    const waMe = "https://www.linkedin.com/in/maatheusgois";
     window.open(waMe, '_blank');
     document.querySelector(".main-modal").classList.add("main-modal--sent");
     dataLayer.push({'event':'contact_request_sent'});
